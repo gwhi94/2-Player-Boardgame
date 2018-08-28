@@ -1,4 +1,4 @@
-A 2 player boardgame in which players move around the map, collect weapons and fight eachother
+A 2 player board-game in which players move around the map, collect weapons and fight each-other
 
 Project overview
 
