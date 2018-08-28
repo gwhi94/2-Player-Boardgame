@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel = "stylesheet" type = "text/css" href="../css/css.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
+
+   
+    <title>Project 6</title>
+  </head>
+  <body>
+
+
+  <h1 class="text-center" id="header">Welcome to Space Force! </h1>
+  
+  <div class="container" id = "buttonHolder">
+  	<div class="row">
+  		<div class="text-center"> 
+	  		<button class="btn" id="instructions" onclick="instructions();">Instructions</button>
+	  		<button class="btn" id="generate" onclick="genMap(); this.disabled=true; ">Generate Map!</button>
+	  		<button class="btn" id="startGame" onclick="playerMovement();" disabled>Start the Game !</button>
+	  		<button class="btn" id="player1Go" onclick="playerMovement();" disabled >Player 1 Go !</button>
+	  		<button class="btn" id="player2Go" onclick="p2Movement();" disabled>Player 2 Go !</button>
+	  		<button class="btn" id="endGo" onclick="endTurn();" disabled>End Turn!</button>
+	  	</div>
+	  </div>
+	 </div>
+	 
+
+
+<!-- gameboard generated using CSS grid to define columns and rows-->
+  <div class = "game-board"> 
+  	
+  	<div class ="wall" id= "wall2"></div>
+  	<div class ="wall" id= "wall2"></div>
+  	<div class ="wall" id= "wall2"></div>
+  	<div class ="wall" id= "wall2"></div>
+  	<div class ="wall" id= "wall2"></div>
+  	<div class ="wall" id= "wall2"></div>
+  	<div class ="wall" id= "wall2"></div>
+  	<div class ="wall" id= "wall2"></div>
+  	<div class ="wall" id= "wall2"></div>
+
+  	<div class ="wall" id= "wall2"></div>
+  	<div class = "box" id="box1_1"></div>
+  	<div class = "box" id="box1_2"></div>
+  	<div class = "box" id="box1_3"></div>
+  	<div class = "box" id="box1_4"></div>
+  	<div class = "box" id="box1_5"></div>
+  	<div class = "box" id="box1_6"></div>
+  	<div class = "box" id="box1_7"></div>
+  	<div class ="wall" id= "wall2"></div>
+  	
+  	<div class ="wall" id= "wall2"></div>
+  	<div class = "box" id="box2_1"></div>
+  	<div class = "box" id="box2_2"></div>
+  	<div class = "box" id="box2_3"></div>
+  	<div class = "box" id="box2_4"></div>
+  	<div class = "box" id="box2_5"></div>
+  	<div class = "box" id="box2_6"></div>
+  	<div class = "box" id="box2_7"></div>
+  	<div class ="wall" id= "wall2"></div>
+  	
+  	<div class ="wall" id= "wall2"></div>
+  	<div class = "box" id="box3_1"></div>
+  	<div class = "box" id="box3_2"></div>
+  	<div class = "box" id="box3_3"></div>
+  	<div class = "box" id="box3_4"></div>
+  	<div class = "box" id="box3_5"></div>
+  	<div class = "box" id="box3_6"></div>
+  	<div class = "box" id="box3_7"></div>
+  	<div class ="wall" id= "wall2"></div>
+  	
+  	<div class ="wall" id= "wall2"></div>
+  	<div class = "box" id="box4_1"></div>
+  	<div class = "box" id="box4_2"></div>
+  	<div class = "box" id="box4_3"></div>
+  	<div class = "box" id="box4_4"></div>
+  	<div class = "box" id="box4_5"></div>
+  	<div class = "box" id="box4_6"></div>
+  	<div class = "box" id="box4_7"></div>
+  	<div class ="wall" id= "wall2"></div>
+  	
+  	<div class ="wall" id= "wall2"></div>
+  	<div class = "box" id="box5_1"></div>
+  	<div class = "box" id="box5_2"></div>
+  	<div class = "box" id="box5_3"></div>
+  	<div class = "box" id="box5_4"></div>
+  	<div class = "box" id="box5_5"></div>
+  	<div class = "box" id="box5_6"></div>
+  	<div class = "box" id="box5_7"></div>
+  	<div class ="wall" id= "wall2"></div>
+  	
+  	<div class ="wall" id= "wall2"></div>
+  	<div class = "box" id="box6_1"></div>
+  	<div class = "box" id="box6_2"></div>
+  	<div class = "box" id="box6_3"></div>
+  	<div class = "box" id="box6_4"></div>
+  	<div class = "box" id="box6_5"></div>
+  	<div class = "box" id="box6_6"></div>
+  	<div class = "box" id="box6_7"></div>
+  	<div class ="wall" id= "wall2"></div>
+  	
+  	<div class ="wall" id= "wall2"></div>
+  	<div class = "box" id="box7_1"></div>
+  	<div class = "box" id="box7_2"></div>
+  	<div class = "box" id="box7_3"></div>
+  	<div class = "box" id="box7_4"></div>
+  	<div class = "box" id="box7_5"></div>
+  	<div class = "box" id="box7_6"></div>
+  	<div class = "box" id="box7_7"></div>
+  	<div class ="wall" id= "wall2"></div>
+
+  	<div class ="wall" id= "wall2"></div>
+  	<div class ="wall" id= "wall2"></div>
+  	<div class ="wall" id= "wall2"></div>
+  	<div class ="wall" id= "wall2"></div>
+  	<div class ="wall" id= "wall2"></div>
+  	<div class ="wall" id= "wall2"></div>
+  	<div class ="wall" id= "wall2"></div>
+  	<div class ="wall" id= "wall2"></div>
+  	<div class ="wall" id= "wall2"></div>
+
+  </div>
+
+  
+  <div class="container" id="instructionsPanel">
+  	<div class="row">
+  		<h2 class =" text-center" id="instructionsHeader">Instructions to Play</h2>
+  		<p class="text-center" id ="instructionsPara">
+  		</br>	
+  		Start the game by clicking the Start game button above
+  		</br>
+  		</br>
+  		Player 1 will be able to go first, choose a tile up down left or right,
+  		both players will start with an evenly matched weapon
+  		</br>
+  		</br>
+  		You can move up to 3 squares during one go, you cant move through walls
+  		</br>
+  		</br>
+  		You can also pick weapons up that are scattered randomly around the map, 
+  		by picking up a weapon, you will drop your current weapon
+  		</br>
+  		</br>
+  		Once player one has finished, it is player 2's go. Player 2 can
+  		start their go by clicking Player 2 Go button above. 
+  		Either player may end their go early by clicking the end go button.
+  		</br>
+  		</br>
+  		If you meet the other player during the game, a fight will occur. The player 
+  		who moved last will get to attack first, unless it is their last move.
+  		</br>
+  		</br>
+  		Players will take turns in attacking, if you choose to defend then you will 
+  		sustain 50% less damage from the next attack
+  		</br>
+  		</br>
+  		The fight will end when one player is at 0 health, so ensure you pick up the 
+  		best weapons! 
+  		</br>
+  		</br>
+  		After the game has ended, you will be able to reset the game and play again,
+  		this time player 2 will start.
+
+  		</p>
+
+  		<button id="closeBtn" class="btn" style="margin-left:285px;">Close</button>
+ 		
+  	</div>
+  </div>
+
+
+  <div class="container" id="endGamePanel">
+  	<div class="row">
+  		<h2 class =" text-center" id="endGameHeader">Thank you for Playing</h2>
+  		<p class="text-center" id ="endGamePara">
+  		Click the button below to reset the game and play again!
+  		</br>
+  		</br>
+  		Game Developed by George Whiting for educational purposes 2018
+
+  		</p>
+  		<button id="resetBtn" class="btn" style="margin-left:285px;">Reset</button>
+ 		
+  	</div>
+  </div>
+
+
+
+
+
+
+  <div class="container" id="statusBox">
+  	<div class "row">
+  		<div class = "col-xs-4 col-xs-offset-4">
+  		<h5 id="statusBoxText">Game Status</h5>
+  		</div>
+  	</div> 	
+  </div>
+
+
+  <div class = "container" id ="gameInfo">
+  	<div class="row">
+  		<div class = "col-xs-6" id="playerOneInfo">
+  			
+  		<h3 class="playerIndicator" id="p1Indicator">Player 1</h3>
+  		<h4 class = "playerStats">Current Weapon:</h4>
+  		<h4 id = "p1CurrentWeapon">Laser Pistol</h4>
+  		<h4 class = "playerStats">Current Damage:</h4>
+  		<h4 id = "p1CurrentDamage">10</h4>
+  		<h4 class = "playerStats">Current Health:</h4>
+  		<h4 id = "p1CurrentHealth">100</h4>
+  		<button class="fightButtons" id = "p1AttackButton" disabled>Attack</button>
+  		<button class="fightButtons" id = "p1DefendButton" disabled>Defend</button>
+		</div>
+		
+		<div class = "col-xs-6" id="playerTwoInfo">  		
+  		<h3 class="playerIndicator" id = "p2Indicator">Player 2</h3>
+  		<h4 class = "playerStats">Current Weapon:</h4>
+  		<h4 id = "p2CurrentWeapon">Revolver</h4>
+  		<h4 class = "playerStats">Current Damage:</h4>
+  		<h4 id = "p2CurrentDamage">10</h4>
+  		<h4 class = "playerStats">Current Health:</h4>
+  		<h4 id = "p2CurrentHealth">100</h4>
+  		<button class="fightButtons" id = "p2AttackButton"disabled>Attack</button>
+  		<button class="fightButtons" id = "p2DefendButton"disabled>Defend</button>
+  	</div>
+  </div>
+ 
+ 
+
+
+   <script src="../js/gameObjects.js"></script>
+   <script src="../js/endTurn.js"></script>
+   <script src="../js/fight.js"></script>
+   <script src="../js/genMap.js"></script>
+   <script src="../js/instructions.js"></script>
+   <script src="../js/p2Movement.js"></script>
+   <script src="../js/playerMovement.js"></script>
+   <script src="../js/pickUpWeapon.js"></script>
+   <script src="../js/endGame.js"></script>
+  
+
+ 
+  
+
+  </body>
+</html>

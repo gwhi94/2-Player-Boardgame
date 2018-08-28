@@ -1,0 +1,241 @@
+
+
+*{
+	font-family: 'Orbitron', sans-serif;
+}
+
+
+.game-board{ /*Using CSS grid for gameboard*/
+	display: grid;
+	grid-template-columns: 20px 120px 120px 120px 120px 120px 120px 120px 20px; /*columns size */
+	grid-template-rows: 20px 120px 120px 120px 120px 120px 120px 120px 20px; /*rows size */
+	justify-content: center;
+
+}
+
+.box { /*Individual Tiles*/
+	background-color: #d9d9d9;
+	border: 2px solid black;
+}
+
+.wall{
+	border: 2px solid black;
+	background-image: url("../assets/img/wall.png");
+	background-position: 50% 50%;
+	background-color: white;
+	background-repeat: no-repeat;
+}
+
+#wall2{ /*Exterior Wall*/
+	background-color: #707070 !important;
+}
+
+.player1{ /*CSS for player 1*/
+	background-image: url("../assets/img/player1.png");
+	background-position: 10% 55%;
+	background-size:120px 120px;
+	border: 2px solid black;
+	background-repeat: no-repeat;
+	transform: rotate(90deg);
+	background-color: #d9d9d9;
+}
+
+.player2{ /*CSS for player 2*/
+	background-image: url("../assets/img/player2.png");
+	background-position: 20% 40%;
+	background-size:100px 100px;
+	border: 2px solid black;
+	background-repeat: no-repeat;
+	background-color: #d9d9d9;
+}
+
+.weapon1{ /*Laser Rifle*/
+	border: 2px solid black;
+	background-image: url("../assets/img/laserRifle.png");
+	background-position: 20% 40%;
+	background-size:120px 70px;
+	background-repeat: no-repeat;
+	background-color: #d9d9d9;
+}
+
+.weapon2{/*Shotgun*/
+	border: 2px solid black;
+	background-image: url("../assets/img/shotGun.png");
+	background-position: 20% 40%;
+	background-size:120px 70px;
+	background-repeat: no-repeat;
+	background-color: #d9d9d9;
+}
+
+.weapon3{/*Rail Gun*/
+	border: 2px solid black;
+	background-image: url("../assets/img/railGun.png");
+	background-position: 20% 40%;
+	background-size:120px 70px;
+	background-repeat: no-repeat;
+	background-color: #d9d9d9;
+}
+
+.weapon4{ /*Laser Pistol*/
+	border: 2px solid black;
+	background-image: url("../assets/img/laserPistol.png");
+	background-position: 20% 40%;
+	background-size:120px 70px;
+	background-repeat: no-repeat;
+	background-color: #d9d9d9;
+}
+ 
+.weapon5{ /*Revolver*/
+	border: 2px solid black;
+	background-image: url("../assets/img/revolver.png");
+	background-position: 20% 40%;
+	background-size:120px 70px;
+	background-repeat: no-repeat;
+	background-color: #d9d9d9;
+}
+
+#gameInfo{ /*Game info box at bottom of screen*/
+	border:3px solid black;
+	height:230px;
+	margin-top:0px;
+	margin-bottom: 8px;
+	border-radius:15px;
+
+}
+
+#playerOneInfo{ /*Player 1's info*/
+
+	border-right:3px solid black;
+	height:225px;
+	border-radius: 15px 0px 0px 15px;
+	background-color: white;
+
+
+}
+
+#playerTwoInfo{ /*Player 2's info*/
+	height:225px;
+	border-radius: 0px 15px 15px 0px;
+	background-color: white;	
+}
+
+.playerStats{ /*Players text stats (headers)*/
+	text-align: center;
+	margin-top:2px;
+	margin-bottom: 2px;
+	font-weight: bold;
+}
+
+#p1CurrentWeapon, #p1CurrentDamage, #p1CurrentHealth, #p2CurrentWeapon,#p2CurrentDamage, #p2CurrentHealth{ /*Individual stats for both player*/
+	text-align: center;
+	color:red;
+	font-weight: bold;
+	margin-top: 5px;
+	margin-bottom: 5px;	
+}
+
+.playerIndicator{ /*Player headers*/
+	text-align: center;
+	margin-top:4px;
+	margin-bottom: 9px;
+	text-decoration: bold;
+	color: #0066cc;
+}
+
+
+.fightButtons{ 
+	width:49%;
+}
+
+#statusBox{ /*Box that prints game progress*/
+	border:3px solid black;
+	border-bottom:0px;
+	border-radius:15px 15px 0px 0px ;
+	width:500px;
+	height:55px;
+	margin-bottom: 0px;
+	margin-top:10px;
+	background-color: white;
+}
+
+
+#statusBoxText{
+	text-align: center;
+	color:red;
+	width:300px;
+	margin-left: -83px;
+	font-weight: bold;
+	font-size: 22px;	
+}
+
+body{
+
+	background-image: url('../assets/img/background.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+
+}
+
+#header{
+	color: red;
+	font-family: 'Orbitron', sans-serif;
+	margin-top: 6px;
+}
+
+#buttonHolder{
+	background-color: white;
+	width:880px;
+	border-radius:15px 15px 0px 0px;
+	height: 50px;
+}
+
+#generate, #startGame, #player1Go, #player2Go,#instructions,#endGo{ /*CSS for game control buttons*/
+	margin-top: 7px;
+	color:red;
+	text-decoration: bold;
+	font-size: 16px;
+}
+
+#instructionsPanel{ /*Instructions panel*/
+	background-color: white;
+	height:870px;
+	width:650px;
+	position: absolute;
+	margin-top: -600px;
+	margin-left: -325px;
+	top: 50%;
+    left: 50%;
+    border:6px solid green;
+    border-radius:20px;
+    display: none;
+
+}
+
+#endGamePanel{ /*End game panel*/
+	background-color: white;
+	height:350px;
+	width:650px;
+	position: absolute;
+	margin-top: -300px;
+	margin-left: -325px;
+	top: 50%;
+    left: 50%;
+    border:6px solid green;
+    border-radius:20px;
+    display: none;
+}
+
+#instructionsHeader,#endGameHeader{
+	color:#0066cc;
+	margin-bottom: 1px;
+}
+
+#instructionsPara, #endGamePara{
+	font-size: 18px;
+	padding:9px; 
+	text-align: center;
+
+
+}
+
+
