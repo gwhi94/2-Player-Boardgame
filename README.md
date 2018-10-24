@@ -23,7 +23,12 @@
  
  ![game](https://user-images.githubusercontent.com/40371755/47440841-ea491080-d7a6-11e8-85ec-bba0226a2e2a.png)
 <br/>
- ### Example Code
+### Game can be played here:
+<br/>
+https://gwhi94.github.io/spaceforce.github.io/
+<br/>
+
+### Example Code
  
  ```JavaScript
  if (playerOne.active == true && playerTwo.active == false){ //checks to see which player is active
